@@ -14,10 +14,9 @@ The commands are editor-only (`EditorInterface`). Add them to a `GDSh.Host` thro
 manifest, which also makes exporters bundle every command:
 
 ```gdscript
-const EditorManifest = preload("res://addons/_lib/gdsh_lib/editor/src/manifest.gd")
+const EditorManifest = preload("res://addons/_lib/gdsh_lib/editor/cmd/manifest.gd")
 
-for ns in EditorManifest.NAMESPACES:
-    host.add_command(ns.resource_path)
+host.add_command_dir(EditorManifest.resource_path.get_base_dir())
 ```
 
 Optional host hooks, set in `host_data`:

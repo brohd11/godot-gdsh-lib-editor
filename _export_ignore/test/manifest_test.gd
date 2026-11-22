@@ -2,7 +2,7 @@ extends SceneTree
 ## Every command compiles from the manifest, has a name, and the namespaces route to their
 ## subcommands. Headless (isolated): python3 addons/_lib/gdsh_lib/editor/_export_ignore/test/run_headless.py
 ## Editor console: `test res://addons/_lib/gdsh_lib/editor/_export_ignore/test`.
-const Manifest = preload("res://addons/_lib/gdsh_lib/editor/src/manifest.gd")
+const Manifest = preload("res://addons/_lib/gdsh_lib/editor/cmd/manifest.gd")
 const Sh = preload("res://addons/_lib/gdsh/_ns/gd_sh.gd")
 
 const EXPECTED = {

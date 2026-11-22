@@ -1,6 +1,6 @@
 extends "res://addons/_lib/gdsh/src/core/command_base.gd"
 
-const Undo = preload("res://addons/_lib/gdsh_lib/editor/src/editor/undo/undo.gd")
+const Undo = preload("res://addons/_lib/gdsh_lib/editor/cmd/editor/undo/undo.gd")
 
 const _HELP = \
 "Redo the next action(s) in the edited scene's history, or the global history with --global.
