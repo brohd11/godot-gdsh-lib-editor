@@ -4,6 +4,8 @@ gdsh commands for driving the Godot editor, shared by
 [Editor Console](https://github.com/brohd11/Godot-Editor-Console) and the
 [mcp-sh-godot](https://github.com/brohd11/mcp-sh-godot) plugin.
 
+Install: see [Command packages](https://github.com/brohd11/godot-gdsh/blob/main/_export_ignore/docs/packages.md) in the gdsh repo.
+
 - `editor`: play/stop, open, scan, reveal, restart, the editor's undo/redo, scenes (new, save,
   reload, root, select), the current script, `state`, `screenshot`, text `search` and `plugin`
   (enable/disable addons).
