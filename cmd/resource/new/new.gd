@@ -66,3 +66,4 @@ func _execute(ctx:Context):
 
 	EditorInterface.get_resource_filesystem().update_file(dest)
 	ctx.append_output(dest)
+	return ExitCode.OK

@@ -78,3 +78,4 @@ func _execute(ctx:Context):
 	else:
 		EditorInterface.open_scene_from_path(dest)
 		ctx.append_output("Created scene: " + dest)
+	return ExitCode.OK

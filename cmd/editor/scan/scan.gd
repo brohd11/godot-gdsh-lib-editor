@@ -40,3 +40,4 @@ func _execute(ctx:Context):
 			ctx.append_output("Editor window focus grabbed.")
 	fs.scan()
 	ctx.append_output("Filesystem rescan started.")
+	return ExitCode.OK

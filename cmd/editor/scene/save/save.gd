@@ -47,3 +47,4 @@ func _execute(ctx:Context):
 		ctx.append_error("Save failed (error %s): %s" % [err, error_string(err)])
 		return ExitCode.FAIL
 	ctx.append_output("Saved scene: " + (as_flag if as_flag != "" else root.scene_file_path))
+	return ExitCode.OK

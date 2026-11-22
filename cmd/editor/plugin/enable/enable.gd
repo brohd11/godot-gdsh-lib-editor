@@ -71,6 +71,7 @@ func _execute(ctx:Context):
 			return ExitCode.FAIL
 		EditorInterface.set_plugin_enabled(plugin_name, false)
 		EditorInterface.set_plugin_enabled(plugin_name, true)
+	return ExitCode.OK
 
 func _valid_state(ctx:Context, plugin_name:String, target_state:bool):
 	if EditorInterface.is_plugin_enabled(plugin_name) == target_state:

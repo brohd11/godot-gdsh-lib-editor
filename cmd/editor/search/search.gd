@@ -73,3 +73,4 @@ func _execute(ctx:Context):
 	if hits == 0:
 		ctx.append_error("No matches for: " + pattern)
 		return ExitCode.FAIL
+	return ExitCode.OK

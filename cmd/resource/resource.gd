@@ -41,3 +41,5 @@ func _execute(ctx:Context):
 		ctx.append_output(path_flag)
 	else:
 		ctx.append_error("File doesn't exist: " + path_flag)
+		return ExitCode.FAIL
+	return ExitCode.OK

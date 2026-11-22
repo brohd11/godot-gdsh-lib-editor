@@ -46,8 +46,7 @@ func _execute(ctx:Context):
 	
 	elif not DirAccess.dir_exists_absolute(dir_flag):
 		ctx.append_error("Directory doesn't exist: " + dir_flag)
-		ctx.exit_code = ExitCode.FAIL
-		return
+		return ExitCode.FAIL
 	
 	var prefix = dir_flag if dir_flag.ends_with("/") else dir_flag + "/"
 	for f in Utils.file_paths(ctx):
@@ -62,4 +61,4 @@ func _execute(ctx:Context):
 		elif search_term.is_subsequence_ofn(f):
 			ctx.append_output(f)
 	
-	ctx.exit_code = ExitCode.OK
+	return ExitCode.OK

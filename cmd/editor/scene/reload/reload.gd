@@ -23,3 +23,4 @@ func _execute(ctx:Context):
 		return ExitCode.FAIL
 	EditorInterface.reload_scene_from_path(path)
 	ctx.append_output("Reloaded scene: " + path)
+	return ExitCode.OK

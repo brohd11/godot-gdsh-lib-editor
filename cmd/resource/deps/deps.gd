@@ -22,10 +22,11 @@ func _execute(ctx:Context):
 	var deps = ResourceLoader.get_dependencies(path)
 	if deps.is_empty():
 		ctx.append_output("No dependencies.")
-		return
+		return ExitCode.OK
 
 	for entry in deps:
 		ctx.append_output(_resolve_path(entry))
+	return ExitCode.OK
 
 func _resolve_path(entry:String) -> String:
 	# Entries look like "uid://...::Type::res://path" (order varies by version).

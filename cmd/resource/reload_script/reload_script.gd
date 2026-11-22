@@ -38,3 +38,4 @@ func _execute(ctx:Context):
 			script.source_code = FileAccess.get_file_as_string(p)
 		script.reload(true)
 		ctx.append_output("Reloaded script: " + p)
+	return ExitCode.OK

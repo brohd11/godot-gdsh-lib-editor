@@ -35,7 +35,7 @@ func _execute(ctx:Context):
 
 	if positional_args.size() == 1:
 		ctx.append_output(str(settings.get_setting(name)))
-		return
+		return ExitCode.OK
 	var new_val = positional_args[1]
 	var converted = null
 	var current = settings.get_setting(name)
@@ -48,3 +48,4 @@ func _execute(ctx:Context):
 			return ExitCode.ERR
 	settings.set_setting(name, converted)
 	ctx.append_output("%s = %s" % [name, str(converted)])
+	return ExitCode.OK

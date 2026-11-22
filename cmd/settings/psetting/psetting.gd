@@ -23,7 +23,7 @@ func _execute(ctx:Context):
 			ctx.append_error("No such project setting: " + name)
 			return ExitCode.FAIL
 		ctx.append_output(str(ProjectSettings.get_setting(name)))
-		return
+		return ExitCode.OK
 
 	var new_val = positional_args[1]
 	var current = ProjectSettings.get_setting(name)
@@ -42,3 +42,4 @@ func _execute(ctx:Context):
 		ctx.append_error("Saved setting but project.godot save failed (error %s)." % err)
 		return ExitCode.FAIL
 	ctx.append_output("%s = %s" % [name, str(converted)])
+	return ExitCode.OK

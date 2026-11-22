@@ -24,7 +24,7 @@ func _execute(ctx:Context):
 			ctx.append_error("Unknown uid: " + arg)
 			return ExitCode.FAIL
 		ctx.append_output(ResourceUID.get_id_path(id))
-		return
+		return ExitCode.OK
 
 	if not FileAccess.file_exists(arg):
 		ctx.append_error("File does not exist: " + arg)
@@ -34,3 +34,4 @@ func _execute(ctx:Context):
 		ctx.append_error("No uid associated with: " + arg)
 		return ExitCode.FAIL
 	ctx.append_output(ResourceUID.id_to_text(id))
+	return ExitCode.OK

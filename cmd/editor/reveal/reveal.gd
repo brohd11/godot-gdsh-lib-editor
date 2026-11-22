@@ -38,3 +38,4 @@ func _execute(ctx:Context):
 		return ExitCode.FAIL
 	dock.navigate_to_path(path)
 	ctx.append_output("Revealed: " + path)
+	return ExitCode.OK

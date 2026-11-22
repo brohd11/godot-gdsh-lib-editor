@@ -15,6 +15,7 @@ static func get_self_command_data() -> Dictionary:
 func _execute(ctx:Context):
 	if not EditorInterface.is_playing_scene():
 		ctx.append_output("No scene is currently playing.")
-		return
+		return ExitCode.OK
 	EditorInterface.stop_playing_scene()
 	ctx.append_output("Stopped playing scene.")
+	return ExitCode.OK

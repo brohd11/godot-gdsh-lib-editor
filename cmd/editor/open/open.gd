@@ -50,7 +50,7 @@ func _execute(ctx:Context):
 	if ext == "tscn" or ext == "scn":
 		EditorInterface.open_scene_from_path(path)
 		ctx.append_output("Opened scene: " + path)
-		return
+		return ExitCode.OK
 
 	var res = load(path)
 	if not is_instance_valid(res):
@@ -65,3 +65,4 @@ func _execute(ctx:Context):
 	if inspect_flag:
 		EditorInterface.edit_resource(res)
 	ctx.append_output("Opened: " + path)
+	return ExitCode.OK

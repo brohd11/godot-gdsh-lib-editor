@@ -47,3 +47,4 @@ func _execute(ctx:Context):
 	else:
 		EditorInterface.play_main_scene()
 		ctx.append_output("Playing main scene.")
+	return ExitCode.OK

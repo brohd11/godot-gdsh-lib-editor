@@ -24,7 +24,7 @@ func _execute(ctx:Context):
 			ctx.append_error("No main scene set.")
 			return ExitCode.FAIL
 		ctx.append_output(current)
-		return
+		return ExitCode.OK
 
 	var path = positional_args[0]
 	if not FileAccess.file_exists(path):
@@ -36,3 +36,4 @@ func _execute(ctx:Context):
 		ctx.append_error("project.godot save failed (error %s)." % err)
 		return ExitCode.FAIL
 	ctx.append_output("Main scene set to: " + path)
+	return ExitCode.OK
