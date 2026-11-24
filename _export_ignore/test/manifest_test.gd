@@ -22,11 +22,10 @@ static func run_tests() -> Dictionary:
 	var out := []
 	var failures := 0
 	for script in Manifest.COMMANDS + [Manifest.EDITOR, Manifest.SETTINGS, Manifest.RESOURCE]:
-		if not (script as GDScript).can_instantiate():
-			out.append("FAIL compile: " + script.resource_path)
-			failures += 1
-		elif str(script.get_command_name()).is_empty():
-			out.append("FAIL unnamed: " + script.resource_path)
+		# Load's check (compiles, extends CommandBase, has a name), not can_instantiate(): that is
+		# false in the editor for non-@tool scripts, so every command failed under the console's `test`.
+		if Sh.Load.load_command(script.resource_path) == null:
+			out.append("FAIL load: " + script.resource_path)
 			failures += 1
 	for ns in Manifest.NAMESPACES:
 		var name = str(ns.get_command_name())
