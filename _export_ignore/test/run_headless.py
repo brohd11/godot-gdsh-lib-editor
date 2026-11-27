@@ -64,6 +64,7 @@ renderer/rendering_method="gl_compatibility"
         commands = [
             [args.godot, '--headless', '--path', str(project), '--editor', '--import'],
             [args.godot, '--headless', '--path', str(project), '--script', test],
+            [args.godot, '--headless', '--path', str(project), '--script', f'res://{TEST_DIR}/settings_plugin_test.gd'],
         ]
         if args.export:
             (project / 'export_presets.cfg').write_text('''[preset.0]

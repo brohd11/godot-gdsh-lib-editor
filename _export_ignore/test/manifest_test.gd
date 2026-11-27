@@ -6,8 +6,8 @@ const Manifest = preload("res://addons/_lib/gdsh_lib/editor/cmd/manifest.gd")
 const Sh = preload("res://addons/_lib/gdsh/_ns/gd_sh.gd")
 
 const EXPECTED = {
-	"editor": ["play", "stop", "open", "scan", "scene", "script", "state", "search", "undo", "redo", "plugin"],
-	"settings": ["psetting", "esetting", "mainscene"],
+	"editor": ["play", "stop", "open", "scan", "scene", "script", "state", "search", "undo", "redo"],
+	"settings": ["psetting", "esetting", "mainscene", "plugin"],
 	"resource": ["new", "duplicate", "uid", "deps", "search", "reload_script"],
 }
 
